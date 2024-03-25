@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
   const [data, setData] = useState({});
@@ -19,7 +21,10 @@ function App() {
   return isLoading ? (
     <span>En cours de chargement... </span>
   ) : (
-    <h2>{data.restaurant.name}</h2>
+    <>
+      <Header data={data} />
+      <Main data={data} />
+    </>
   );
 }
 
